@@ -1802,6 +1802,7 @@
     function onMouseLeave( tracker, event ) {
         event = $.getEvent( event );
 
+        handleMouseUp( tracker, event );
         handleMouseExit( tracker, event );
     }
 
@@ -1817,6 +1818,7 @@
             return;
         }
 
+        handleMouseUp( tracker, event );
         handleMouseExit( tracker, event );
     }
 
@@ -2192,7 +2194,7 @@
             touchCount = event.changedTouches.length,
             gPoints = [],
             pointsList = tracker.getActivePointersListByType( 'touch' );
-        
+
         abortTouchContacts( tracker, event, pointsList );
     }
 
